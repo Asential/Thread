@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Daak{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="shortcut icon" href="#" />
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-2" >
+            <nav class=" nav flex-column" >
+              <ul class="navbar-nav mr-auto flex-column">
+                <li class="nav-item">
+                    <a id="brand" class="navbar-brand" style="font-size: 3.5em;" href="{% url 'index' %}">Daak</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link"><strong>{{ user.username }}</strong></a>
+                    </li>
+                {% endif %}
+                
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
+                {% else %} 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                {% endif %}
+              </ul>
+            </nav>
+        </div>
+        <div class="body col-10">
+            {% block body %}
+            {% endblock %}
+        </div>
+        </div>
+    </body>
+</html>
