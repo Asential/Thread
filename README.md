@@ -1,2 +1,4 @@
 # Vanshavli
  
+{'name': 'B', 'so': <Individual: A>, 'gender': 'F', 'parentM': 'None', 'parentF': 'None', 'children': [{'name': 'C', 'so': 'None', 'gender': 'M', 'parentM': <Individual: A>, 'parentF': <Individual: B>, 'children': 'None', 'dob': datetime.date(2020, 7, 16)}, {'name': 'D', 'so': <Individual: E>, 'gender': 'F', 'parentM': <Individual: A>, 'parentF': <Individual: B>, 'children': [{'name': 'F', 'so': 'None', 'gender': 'M', 'parentM': <Individual: E>, 'parentF': <Individual: 
+D>, 'children': 'None', 'dob': datetime.date(2020, 7, 16)}, {'name': 'G', 'so': 'None', 'gender': 'M', 'parentM': <Individual: E>, 'parentF': <Individual: F>, 'children': 'None', 'dob': datetime.date(2020, 7, 16)}], 'dob': datetime.date(2020, 7, 16)}], 'dob': datetime.date(2020, 7, 16)}

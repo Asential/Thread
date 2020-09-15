@@ -3,18 +3,18 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+import json
+from .api import imp, urlsrch
 
-from .models import User, Individual
+from .models import User
 
 def index(request):
-    return render(request, "vanshaj/index.html")
-
-def home(request):
-
-    people = Individual.objects.all()
-
-    return render(request, "vanshaj/home.html", {
-        "people":people
+    print("Works")
+    data = imp()
+    url=urlsrch()
+    return render(request, "vanshaj/index.html", {
+        "data": data["articles"],
+        "url": url
     })
 
 def login_view(request):
@@ -28,7 +28,7 @@ def login_view(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("home"))
+            return HttpResponseRedirect(reverse("index"))
         else:
             return render(request, "vanshaj/login.html", {
                 "message": "Invalid username and/or password."
@@ -67,9 +67,3 @@ def register(request):
     else:
         return render(request, "vanshaj/register.html")
 
-
-def individual(request, id):
-
-    person = Individual.objects.get(id=id)
-
-    pass
