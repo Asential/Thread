@@ -4,15 +4,19 @@
 {{url}}
 
     {% for i in data %}
-    <div>
-        <a href="{{i.url}}"><h1>{{i.title}}</h1> </a>
-        <p>{{i.author}}</p>
-        <p>{{i.description}}</p>
-        <p>{{i.publishedAt}}</p>
-        <img src="{{i.urlToImage}}" width=25% > 
+    <div style="margin-bottom: 50px;">
+        <a style="text-decoration: none; font-family: 'Hind', sans-serif; font-weight: bolder;" class=" hvr-reveal" href="{% url 'topic' url=i.url topic=i.title %}"><h1 class="titl">{{i.title}}</h1> </a>
+        <p style="padding: 10px 20px; width: 25%; margin-bottom: 0px;" class="diagonal">Author: {{i.author}}</p>
+        <div class="row">
+            <div style="padding: 20px" class="column column1">
+                <p class="desc">{{i.description}}</p>
+                <p class="publ">{{i.publishedAt}}</p>
+            </div>
+            <div class="column column2" style="padding-left: 100px;"><img class="img" src="{{i.urlToImage}}" width=70% > </div>
+        </div>
     </div>
 
-    <hr style="border-top: 1px solid red;">
+
 
     {% endfor %}
 

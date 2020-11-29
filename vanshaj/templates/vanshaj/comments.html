@@ -1,0 +1,26 @@
+   {% for c in comments %}
+        <div style="margin-bottom: 25px; margin-top: 25px;">
+            <div class="commentUser">{{c.user}} <div style="float: right; color: black;">{{c.createdTime}}</div></div>
+            <p>{{c.content}}</p>
+            {% if user.is_authenticated %}
+            <button class="btn btn-secondary reply_btn">Reply</button>
+            {% endif %}
+            <p style="float: right;"></p>
+            <form action="{% url 'reply' url=c.topic.url topic=c.topic id=c.id %}" class="reply-form" method="POST">
+                {% csrf_token %}
+                <div class="field form-group col-12" style="padding: 0;">
+                    <label for="{{ form.description.id_for_label }}">Your Reply</label>
+                    <textarea class=" form-control" style="height: 100px;" name="comment" cols="40" rows="10" maxlength="200" required="" id="id_comment"></textarea>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Submit" >
+                <input type="button" class="btn btn-secondary cancel_btn" value="Cancel"></input>
+            </form>
+            <div style="padding-left: 50px; margin-bottom: 25px; border-left: 2px solid rgb(13, 162, 182);">
+                {% include "vanshaj/comments.html" with comments=c.replies.all parent=c topic=topic user=user csrf_token=csrf_token only %}
+            </div>
+        </div>
+        {% if not c.parent %}
+            <hr style="  border: 0; border-bottom: 1px dashed #ccc; background: #999;">
+        {% endif %}
+    
+    {% endfor %}

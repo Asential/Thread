@@ -8,47 +8,53 @@
         <link rel="shortcut icon" href="#" />
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <link href="{% static 'vanshaj/main.css' %}" rel="stylesheet">
+        <link href="{% static 'vanshaj/hover.css' %}" rel="stylesheet">
+        <script src="{% static 'vanshaj/reply.js' %}" type="text/javascript" ></script>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
     <body>
         <div class="row">
-            <div class="col-2" >
-            <nav class=" nav flex-column" >
-              <ul class="navbar-nav mr-auto flex-column">
+            <div class="col-2" style="background-color: black; padding: 0px; margin-right: 0px; height: auto; min-height:100vh;" >
+            <nav id="NAV" class="nav flex-column" >
+              <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a id="brand" class="navbar-brand" style="font-size: 3.5em;" href="{% url 'index' %}">Vanshaj</a>
+                    <a id="brand" class="navbar-brand" style="font-size: 3.5em; font-family: 'Do Hyeon', sans-serif;" href="{% url 'index' %}">THREAD</a>
                 </li>
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link"><strong>{{ user.username }}</strong></a>
+                    <li class="nav-item" style="color: wheat;">
+                        <a><strong>{{ user.username }}</strong></a>
                     </li>
                 {% endif %}
                 
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                <li class="nav-item bar">
+                    <a  href="{% url 'index' %}">Home</a>
                   </li>
                 {% else %} 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                <li class="nav-item bar">
+                    <a href="{% url 'index' %}">Home</a>
                 </li>
                 {% endif %}
                 {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    <li class="nav-ite bar">
+                        <a href="{% url 'logout' %}">Log Out</a>
                     </li>
                 {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    <li class="nav-item bar">
+                        <a href="{% url 'login' %}">Log In</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    <li class="nav-item bar">
+                        <a href="{% url 'register' %}">Register</a>
                     </li>
                 {% endif %}
               </ul>
             </nav>
-        </div>
-        <div class="body col-10">
+            </div>
+        <div id="MAN" class="col-10">
             {% block body %}
             {% endblock %}
         </div>

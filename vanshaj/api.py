@@ -5,6 +5,3 @@ def imp():
     if res.status_code != 200:
       raise Exception("ERROR: API request unsuccessful.")
     return res.json()
-
-def urlsrch():
-    res = requests.get("http://newsapi.org/v2/everything?&apiKey=3510189891224acbba5ea718b7017f9e")

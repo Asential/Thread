@@ -1,3 +1,79 @@
-body{
-    padding: 10px;
+#NAV > ul > li {
+    padding: 1rem 1rem;
+}
+
+#NAV > ul > li > a {
+    text-decoration: none;
+}
+
+
+#NAV > ul > .bar:hover > a {
+    color: whitesmoke;
+}
+
+#NAV > ul > .bar:hover{
+
+    transition: all 0.5s;
+    color: white;
+    background-color: rgb(19, 80, 194);
+}
+#MAN {
+    padding: 2rem 1.5rem;
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.titl{
+    border-left: 2px solid rgb(19, 80, 194);
+    border-top: 2px solid rgb(19, 80, 194);
+    padding: 20px 10px;
+}
+
+.reply-form
+{
+   display: none;
+}
+
+.column1{
+    background-color: rgb(19, 80, 194);
+}
+
+.column2{
+    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(19, 80, 194));
+}
+
+.img {
+    box-shadow: 0 0 8px 8px white inset;
+}
+
+.column {
+    
+    color: white;
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .diagonal {
+   border-left: 2px solid rgb(19, 80, 194);
+   /* border-right: 2px solid rgb(19, 80, 194);
+   border-top: 2px solid rgb(19, 80, 194); */
+  }
+
+.titl{
+    color: rgb(32, 60, 221);
+}
+
+.commentUser{
+    color: #8600da;
+
 }
