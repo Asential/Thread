@@ -4,7 +4,7 @@
 
 
     <div>
-        <a style="text-decoration: none; font-family: 'Hind', sans-serif;" href="{{url}}" target="_blank"><h1>{{topic}}</h1> </a>
+        <a class="discuss-topic" style="text-decoration: none; font-family: 'Hind', sans-serif;" href="{{url}}" target="_blank"><h1>{{topic}}</h1> </a>
     </div>
 
     <p style="color: gray;" > <i style="font-size:15px" class="fa">&#xf06a;</i> You can click on the link above to go to the referenced page!</p>
@@ -14,7 +14,7 @@
             {% csrf_token %}
             <div class="field form-group col-12" style="padding: 0;">
                 <label for="{{ form.description.id_for_label }}">Write a comment</label>
-                <textarea placeholder="Share your thoughts here..." class=" form-control" style="height: 100px;" name="comment" cols="40" rows="10" maxlength="200" required="" id="id_comment"></textarea>
+                <textarea  placeholder="Share your thoughts here..." class=" form-control" style="height: 100px;" name="comment" cols="40" rows="10" maxlength="1000" required="" id="id_comment"></textarea>
             </div>
             <input class="btn btn-primary" type="submit" value="Post" >
         </form>

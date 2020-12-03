@@ -10,7 +10,7 @@
                 {% csrf_token %}
                 <div class="field form-group col-12" style="padding: 0;">
                     <label for="{{ form.description.id_for_label }}">Your Reply</label>
-                    <textarea class=" form-control" style="height: 100px;" name="comment" cols="40" rows="10" maxlength="200" required="" id="id_comment"></textarea>
+                    <textarea class=" form-control" style="height: 100px;" name="comment" cols="40" rows="10" maxlength="1000" required="" id="id_comment"></textarea>
                 </div>
                 <input class="btn btn-primary" type="submit" value="Submit" >
                 <input type="button" class="btn btn-secondary cancel_btn" value="Cancel"></input>

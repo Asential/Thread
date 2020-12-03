@@ -1,9 +1,30 @@
-#NAV > ul > li {
-    padding: 1rem 1rem;
+body{
+    background-color: wheat;
+}
+.btn{
+    border-radius: 0px;
 }
 
 #NAV > ul > li > a {
+    padding: 1rem 1rem;
     text-decoration: none;
+}
+#navbar-color{
+    
+     background-color: black;
+     width: auto; 
+     min-width:100vh
+
+}
+
+#NAV > ul > .bar > a {
+    padding: 2rem 1rem;
+}
+
+#brand{
+    font-size: 3.5em; 
+    font-family: 'Do Hyeon', sans-serif;
+    padding: 0.5rem 0.5rem;
 }
 
 
@@ -17,6 +38,7 @@
     color: white;
     background-color: rgb(19, 80, 194);
 }
+
 #MAN {
     padding: 2rem 1.5rem;
 }
@@ -27,6 +49,7 @@
 }
 
 .titl{
+    width: 100%;
     border-left: 2px solid rgb(19, 80, 194);
     border-top: 2px solid rgb(19, 80, 194);
     padding: 20px 10px;
@@ -50,30 +73,82 @@
 }
 
 .column {
-    
     color: white;
     float: left;
     width: 50%;
   }
   
-  /* Clear floats after the columns */
-  .row:after {
+/* Clear floats after the columns */
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 
-  .diagonal {
-   border-left: 2px solid rgb(19, 80, 194);
-   /* border-right: 2px solid rgb(19, 80, 194);
-   border-top: 2px solid rgb(19, 80, 194); */
-  }
+.diagonal {
+    border-left: 2px solid rgb(19, 80, 194);
+}
+
+.input-f{
+    width: 40%;
+}
 
 .titl{
     color: rgb(32, 60, 221);
 }
-
+.comments > form > div > textarea{
+    width: 40%;
+}   
 .commentUser{
-    color: #8600da;
+    color: forestgreen;
+    font-weight: bold;
 
+    
+}
+#mobile{
+    display: none;
+}
+
+/* Portrait */
+@media only screen and (max-width: 600px)
+{
+    #normal{
+        display: none;
+    }
+    #mobile{
+        display: unset;
+    }
+    #MAN {
+        margin-top: 70px;
+    }
+    #nav-button{
+        margin-top: 1rem;
+        background-color: black;
+        border: 0px;
+        margin-right: 1rem;
+    }
+    .column2{
+        display: none;
+    }
+    .column1{
+        width: auto;
+    }
+    .discuss-topic > h1{
+        font-size: xx-large;
+    }
+    .titl{
+        font-size: xx-large;
+        width: 100%;
+        border-left: 2px solid rgb(19, 80, 194);
+        border-right: 2px solid rgb(19, 80, 194);
+        border-top: 2px solid rgb(19, 80, 194);
+
+    }
+    .comments > form > div > textarea{
+        width: 100%;
+    }    
+
+    .input-f{
+        width: 100%;
+    }
 }

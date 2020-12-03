@@ -1,0 +1,38 @@
+#navbar {
+    z-index: 9;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color:dodgerblue;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .dropdown-menu{
+      background-color: ghostwhite;
+  }
+
+  #navbar a:hover {
+    background-color: rgb(41, 40, 40);
+    color: white;
+  }
+
+  menu{
+    width: 35px;
+    height: 5px;
+    background-color: wheat;
+    margin: 6px 0;
+  }
+
+  
