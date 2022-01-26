@@ -1,6 +1,8 @@
-# THREAD
+# Thread
 
 A news-discussion website.
+
+[Website Showcase](https://www.youtube.com/watch?v=EWgRTbtxoEU)
 
 I decided to create a forum based website, which only focuses on the current headlines for my final project. The idea is to provide a place where people can discuss whats going on & get informed as well. To do so, the website needs to stay updated constantly and focus only on the current news, hence the users are limited to a certain amount of posts.
 
